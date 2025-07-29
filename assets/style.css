@@ -1,58 +1,117 @@
+/* Base styles */
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
-  background: #fff;
-  color: #222;
-  transition: background 0.3s, color 0.3s;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fefbf8;
+  color: #111;
+  transition: all 0.3s;
 }
-body.dark {
-  background: #121212;
-  color: #eee;
-}
+
 header {
+  background: #fff;
+  border-bottom: 2px solid #e2e2e2;
+  padding: 10px 0;
+}
+
+.navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background: #f2f2f2;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-body.dark header {
-  background: #1e1e1e;
-}
-nav a {
-  margin: 0 10px;
+
+.nav-links a {
+  margin: 0 15px;
   text-decoration: none;
-  color: inherit;
+  color: #333;
+  font-weight: 600;
 }
-.logo {
-  height: 50px;
+
+.theme-toggle {
+  position: relative;
 }
-.banner {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
+.theme-toggle input[type="checkbox"] {
+  width: 40px;
+  height: 20px;
+  appearance: none;
+  background: #ccc;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-main {
+.theme-toggle input[type="checkbox"]:checked {
+  background: #444;
+}
+
+/* Hero Section */
+.hero {
   text-align: center;
-  padding: 2rem;
+  padding: 20px;
+  position: relative;
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 960px;
+  background: #fff;
 }
-.discord-btn {
-  padding: 10px 20px;
-  background: #5865f2;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
+
+.banner-bg {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.logo-center {
+  width: 200px;
+  margin-top: -130px;
+  border-radius: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-top: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.discord-button {
+  margin-top: 20px;
   display: inline-block;
-  margin-top: 1rem;
-}
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-ul li::before {
-  content: "• ";
-  color: #5865f2;
+  padding: 12px 24px;
+  background-color: #f7d794;
+  color: #000;
+  text-decoration: none;
   font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Dark Mode */
+body.dark {
+  background: #1f1f1f;
+  color: #fefefe;
+}
+
+body.dark header {
+  background: #2a2a2a;
+  border-bottom: 1px solid #444;
+}
+
+body.dark .nav-links a {
+  color: #fefefe;
+}
+
+body.dark .hero {
+  background: #2e2e2e;
+}
+
+body.dark .discord-button {
+  background: #ffeaa7;
+  color: #222;
 }
